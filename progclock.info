@@ -1,0 +1,1 @@
+{"id":"progclock","name":"Ring Clock","type":"clock","src":"progclock.app.js","icon":"multiclock.img","sortorder":-10,"version":"0.08","tags":"clock","files":"progclock.info,progclock.app.js"}

@@ -1,0 +1,44 @@
+{
+    "nord" : {
+        "light" : {
+            "colors" : {
+                "faceBg" : "#eceff4",
+                "faceFg" : "#2e3440",
+                "trackBg1" : "#e5e9f0",
+                "trackBg2" : "#d8dee9",
+                "trackYear" : "#bf616a",
+                "trackMonth" : "#5e81ac",
+                "trackWeek" : "#d08770",
+                "trackDay" : "#a3be8c"
+              },
+              "alias" : {
+                "battHigh" : "trackMonth",
+                "battMed" : "trackWeek",
+                "battLow" : "trackYear",
+                "btOn" : "trackMonth",
+                "btOff" : "trackBg1"
+              }
+        }
+    },
+    "everforest" : {
+        "light" : {
+            "colors" : {
+                "faceBg" : "#fffbef",
+                "faceFg" : "#5c6a72",
+                "trackBg1" : "#f2efdf",
+                "trackBg2" : "#e8e5d5",
+                "trackYear" : "#f85552",
+                "trackMonth" : "#3a94c5",
+                "trackWeek" : "#f57d26",
+                "trackDay" : "#8da101"
+              },
+              "alias" : {
+                "battHigh" : "trackMonth",
+                "battMed" : "trackWeek",
+                "battLow" : "trackYear",
+                "btOn" : "trackMonth",
+                "btOff" : "trackBg1"
+              }
+        }
+    }   
+}
