@@ -233,7 +233,8 @@ function drawTicks(gra) {
 
 function drawRing(ringRadius, ringPecent, fgColour, bgColour, gra) {
 
-  let endAngle = twoPi * ringPecent;
+  let ea = twoPi * ringPecent;
+  let endAngle = ea;
   let startAngle = 0;
   
   let fillColour = fgColour;
@@ -254,7 +255,16 @@ function drawRing(ringRadius, ringPecent, fgColour, bgColour, gra) {
   // calculate and draw progess ring
   gra.setColor(fillColour);
   drawPiece(CenterX, CenterY, ringRadius, startAngle, endAngle, gra);
-
+  
+  const capRadius = 6; 
+  const rr = ringRadius - capRadius;
+  gra.setColor(fgColour);
+  gra.fillCircle(
+    CenterX + (Math.cos(ea-halfPi) * rr),
+    CenterY + (Math.sin(ea-halfPi) * rr),
+    capRadius
+  );
+  
   // draw track edge
   gra.setColor(bgColour);
   gra.drawCircle(CenterX, CenterY, ringRadius);
@@ -363,7 +373,7 @@ function drawClock(gra) {
   gra.setColor(colors.faceFg);
   gra.drawString(
     ts,
-    CenterX - 12,
+    CenterX - 11,
     CenterY + (17*1.5)
   );
 
