@@ -1,0 +1,4 @@
+- [] Monkeypatch battery level reporting
+- [] Set up proper Bangle.js replacement, based on jeffmer's stuff
+- [] Start new settings screen
+- [] Bold face for digital clocks
