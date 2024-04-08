@@ -33,7 +33,7 @@
                 "trackDay" : "#8da101"
               },
               "alias" : {
-                "battHigh" : "trackMonth",
+                "battHigh" : "trackDay",
                 "battMed" : "trackWeek",
                 "battLow" : "trackYear",
                 "btOn" : "trackMonth",
