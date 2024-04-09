@@ -31,6 +31,18 @@ wOS.brightness= function(v){
       analogWrite(D12,v,{freq:144});
 };
 
+// monkeypatch battery reporting
+wOS.batV = function(){
+  return 4.20/0.59*analogRead(D30);
+}
+E.getBattery = function(v){
+  var l=3.5,h=4.19;
+  v=v?v:wOS.batV();
+  if(v>=h)return 100;
+  if(v<=l)return 0;
+  return 100*(v-l)/(h-l);
+}
+
 
 let ScreenWidth = g.getWidth(), CenterX = ScreenWidth / 2;
 let ScreenHeight = g.getHeight(), CenterY = ScreenHeight / 2;
@@ -254,9 +266,9 @@ function drawRing(ringRadius, ringPecent, fgColour, bgColour, gra) {
 
   // calculate and draw progess ring
   gra.setColor(fillColour);
-  drawPiece(CenterX, CenterY, ringRadius, startAngle, endAngle, gra);
+  drawPiece(CenterX, CenterY, ringRadius+1, startAngle, endAngle, gra);
   
-  const capRadius = 6; 
+  const capRadius = 5.5; 
   const rr = ringRadius - capRadius;
   gra.setColor(fgColour);
   gra.fillCircle(
@@ -266,8 +278,8 @@ function drawRing(ringRadius, ringPecent, fgColour, bgColour, gra) {
   );
   
   // draw track edge
-  gra.setColor(bgColour);
-  gra.drawCircle(CenterX, CenterY, ringRadius);
+  //gra.setColor(bgColour);
+  //gra.drawCircle(CenterX, CenterY, ringRadius);
 }
 
 function yearPercent(now) {
